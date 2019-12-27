@@ -10,6 +10,7 @@
 class Demux {
 protected:
     struct AVFormatContext *ic;
+    struct AVPacket *pkt;
     int videoStream = 0;
     int audioStream = 1;
 public:
@@ -22,4 +23,6 @@ public:
     virtual void getVideoParams(){};
 
     virtual void getAudioParams(){};
+
+    virtual void codec(){}
 };
